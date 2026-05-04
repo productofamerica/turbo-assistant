@@ -63,6 +63,25 @@ export PRIVATE_KEY_PASSWORD="<your-passphrase>"
 
 If signing succeeds, the produced `build/distributions/turbo-assistant-<version>-signed.zip` is what `publishPlugin` will upload. Inspect the zip if you want to be certain.
 
+## First-time-only: register the plugin manually on Marketplace
+
+JetBrains Marketplace requires the first upload of a brand-new plugin to be done through the web UI so the publisher can fill in license, repository URL, tags, and description. The `publishPlugin` task cannot create a new listing; it can only push new versions onto an existing listing. If you skip this step and dispatch the workflow, you will get this error during the `Publish to Marketplace` job:
+
+> Failed to upload plugin: Cannot find plugin. Note that you need to upload the plugin to the repository at least once manually (to specify options like the license, repository URL etc.).
+
+To resolve, do this exactly once:
+
+1. Build the plugin zip locally with `./gradlew buildPlugin`, or download the artifact from a successful `Build` job in GitHub Actions. The zip lives at `build/distributions/turbo-assistant-<version>.zip`.
+2. Go to https://plugins.jetbrains.com/plugin/add and upload the zip.
+3. Fill in:
+   - License: matches the repo's `LICENSE` file
+   - Repository URL: the GitHub repo URL
+   - Tags / categories: pick what fits (Inspections, JSON, Build Tools, etc.)
+   - Channel: `beta` for the first release
+4. Submit. Review for new plugins takes 1 to 3 business days.
+
+Once the listing is approved, every future publish (including the one you tried that hit this gate) goes through the workflow without needing to touch the web UI again.
+
 ## Triggering a publish
 
 Channel selection lives in the workflow; tags are not coupled to publishing. You always pick the channel explicitly.
