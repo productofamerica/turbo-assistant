@@ -1,0 +1,6 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "test": { "dependsOn": [<warning descr="Task 'completelyUnrelated' is not defined in turbo.json or any package.json script.">"completelyUnrelated"</warning>] }
+  }
+}

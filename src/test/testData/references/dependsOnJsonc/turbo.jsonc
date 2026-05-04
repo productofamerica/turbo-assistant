@@ -1,0 +1,8 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  // dependsOn references an in-file task
+  "tasks": {
+    "build": {},
+    "test": { "dependsOn": ["build"] }
+  }
+}

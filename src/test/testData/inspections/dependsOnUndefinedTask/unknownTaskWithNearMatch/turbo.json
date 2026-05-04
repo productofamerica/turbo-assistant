@@ -1,0 +1,7 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "build": {},
+    "test": { "dependsOn": [<warning descr="Task 'buld' is not defined in turbo.json or any package.json script.">"buld"</warning>] }
+  }
+}

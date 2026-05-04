@@ -1,0 +1,13 @@
+{
+  "name": "test-project",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "packageManager": "npm@10.9.0",
+  "devDependencies": {
+    "turbo": "^2.0.0"
+  }
+}

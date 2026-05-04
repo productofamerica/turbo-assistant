@@ -1,0 +1,4 @@
+// package-level turbo config
+<warning descr="Package config must extend the root config. Add \"extends\": [\"//\"].">{</warning>
+  "tasks": {}
+}

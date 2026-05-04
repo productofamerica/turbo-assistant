@@ -1,0 +1,7 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  // dependsOn references a missing package
+  "tasks": {
+    "build": { "dependsOn": ["<warning descr="Package 'absent' is not defined in this workspace.">absent</warning>#build"] }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "@test-project/utils",
+  "version": "0.0.1",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint src",
+    "test": "jest"
+  }
+}

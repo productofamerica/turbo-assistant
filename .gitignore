@@ -1,0 +1,46 @@
+# Gradle
+.gradle/
+build/
+!gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# IntelliJ IDEA project files. Keep code style and inspection profiles, ignore everything else.
+.idea/*
+!.idea/codeStyles/
+!.idea/inspectionProfiles/
+*.iws
+*.iml
+*.ipr
+out/
+
+# IntelliJ Platform plugin sandbox & runtime artifacts
+.intellijPlatform/
+
+# Kotlin
+*.class
+
+# OS junk
+.DS_Store
+Thumbs.db
+*.stackdump
+
+# Editor cruft
+*.swp
+*.swo
+*~
+
+# Local environment
+.env
+.env.local
+local.properties
+
+# Local agent state
+.claude/
+
+# Plugin signing material. Public chain.crt is checked in deliberately; everything else stays local.
+*.pem
+private.*
+*.p12
+*.pfx
+*.key

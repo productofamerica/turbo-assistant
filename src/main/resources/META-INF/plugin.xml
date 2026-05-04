@@ -1,0 +1,48 @@
+<idea-plugin>
+    <id>com.productofamerica.turboassistant</id>
+    <name>Turborepo Assistant</name>
+    <vendor email="turbo.assistant.derail954@passmail.com" url="https://github.com/ProductOfAmerica">ProductOfAmerica</vendor>
+    <description><![CDATA[
+        Unofficial JetBrains plugin that adds Turborepo support to WebStorm,
+        IntelliJ Ultimate, and other JS-capable JetBrains IDEs.
+        <br><br>
+        Not affiliated with or endorsed by Vercel.
+        "Turborepo" is a trademark of Vercel, Inc.
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>JavaScript</depends>
+    <depends>com.intellij.modules.json</depends>
+
+    <idea-version since-build="251.*"/>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <localInspection
+            language="JSON"
+            shortName="TurboAssistantDependsOnUndefinedTask"
+            displayName="dependsOn references undefined task"
+            groupName="Turbo Assistant"
+            enabledByDefault="true"
+            level="WARNING"
+            implementationClass="com.productofamerica.turboassistant.inspections.DependsOnUndefinedTaskInspection"/>
+        <localInspection
+            language="JSON"
+            shortName="TurboAssistantPackageQualifiedTask"
+            displayName="Package-qualified task references unknown package"
+            groupName="Turbo Assistant"
+            enabledByDefault="true"
+            level="WARNING"
+            implementationClass="com.productofamerica.turboassistant.inspections.PackageQualifiedTaskInspection"/>
+        <localInspection
+            language="JSON"
+            shortName="TurboAssistantPackageConfigExtends"
+            displayName="Package config must extend root with [&quot;//&quot;]"
+            groupName="Turbo Assistant"
+            enabledByDefault="true"
+            level="WARNING"
+            implementationClass="com.productofamerica.turboassistant.inspections.PackageConfigExtendsInspection"/>
+        <psi.referenceContributor
+            language="JSON"
+            implementation="com.productofamerica.turboassistant.references.TurboReferenceContributor"/>
+    </extensions>
+</idea-plugin>

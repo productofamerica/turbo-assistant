@@ -1,0 +1,8 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "test": { "dependsOn": ["lint", "<warning descr="Package 'missing' is not defined in this workspace.">missing</warning>#build", "build"] },
+    "build": {},
+    "lint": {}
+  }
+}

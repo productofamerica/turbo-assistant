@@ -1,0 +1,12 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  // Inherit task definitions from the workspace root turbo.json.
+  // Per Turborepo, package-level extends must be exactly ["//"].
+  "extends": ["//"],
+  "tasks": {
+    "build": {
+      // Docs site is a static export; outputs include both Next.js build and the exported static directory.
+      "outputs": ["out/**", ".next/**", "!.next/cache/**"]
+    }
+  }
+}

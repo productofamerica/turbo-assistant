@@ -1,0 +1,7 @@
+// package-level turbo config
+{
+  "extends": [
+    "//"
+  ],
+  "tasks": {}
+}

@@ -1,0 +1,4 @@
+{
+  "extends": <warning descr="Package config 'extends' must be exactly [\"//\"].">{}</warning>,
+  "tasks": {}
+}
